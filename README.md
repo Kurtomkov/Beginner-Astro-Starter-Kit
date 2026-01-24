@@ -52,7 +52,7 @@ minutes.
 1. Run one of these commands to initialize a new project from this template:
 
 ```sh
-npm create astro@latest -- --template CodeStitchOfficial/Beginner-Astro-Starter-Kit
+npm create astro@latest --template CodeStitchOfficial/Beginner-Astro-Starter-Kit
 ```
 
 ```sh
