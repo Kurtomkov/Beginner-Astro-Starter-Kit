@@ -1,17 +1,15 @@
 ---
+import { Picture } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage)
+import landingImage from "../assets/images/landing.jpg"
+
 ---
 
 <BaseLayout
   title="Pixel Perfect Websites"
   description="Meta description for the page"
-  preloadedImage = {optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    Hero                      -->
@@ -43,22 +41,13 @@ allows for repeated components, centralized data and greater room to scale as yo
     </div>
 
     <!-- Background Image -->
-    <picture class="cs-picture">
-      <source
-        media="(max-width: 600px)"
-        srcset="/assets/images/landing-m.webp"
-      />
-      <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg" />
-      <img
-        aria-hidden="true"
-        decoding="async"
-        src={optimizedImage.src}
-        alt="new home"
-        width="2500"
-        height="1667"
-        loading="eager"
-      />
-    </picture>
+	<Picture
+		src={landingImage}
+		alt=""
+		layout="full-width"
+		formats={['avif', 'webp']}
+		pictureAttributes={{ class: "cs-picture" }}
+	/>
   </section>
 
   <!-- ============================================ -->
