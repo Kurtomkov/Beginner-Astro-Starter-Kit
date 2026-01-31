@@ -1,6 +1,8 @@
 ---
 import navData from "../data/navData.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
+import LogoBlack from "../assets/svgs/logo-black.svg";
+import { Image } from "astro:assets";
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
@@ -8,14 +10,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
-      <img
-        src="/assets/svgs/logo-black.svg"
-        alt="logo"
-        width="210"
-        height="29"
-        aria-hidden="true"
-        decoding="async"
-      />
+      <LogoBlack />
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation">

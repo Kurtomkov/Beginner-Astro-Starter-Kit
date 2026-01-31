@@ -1,17 +1,18 @@
 {
   "name": "beginner-astro-v5-less",
   "type": "module",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "remove-demo": "node scripts/remove-demo.js"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.16.6",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.17.1",
     "less": "^4.4.2"
   }
 }
