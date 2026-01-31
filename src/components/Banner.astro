@@ -10,11 +10,12 @@ const { title, image } = Astro.props;
 
   <!-- Background Image -->
   <Picture
+    pictureAttributes={{ class: "cs-picture" }}
     src={image}
     alt=""
     layout="full-width"
     formats={['avif', 'webp']}
-    pictureAttributes={{ class: "cs-picture" }}
+	priority
   />
 </section>
 

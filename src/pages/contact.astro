@@ -1,9 +1,11 @@
 ---
+import { Picture } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import client from "../data/client.json";
 import Banner from "../components/Banner.astro";
 
 import bannerImage from "../assets/images/cabinets2.jpg";
+import skyscraperImage from "../assets/images/skyscraper.jpg";
 ---
 
 <BaseLayout
@@ -108,21 +110,13 @@ import bannerImage from "../assets/images/cabinets2.jpg";
         </a>
 
         <!-- Background Image-->
-        <picture class="cs-bg-picture">
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
-            loading="lazy"
-            width="2500"
-            height="1667"
-          />
-        </picture>
+        <Picture
+			class="cs-bg-picture"
+			src={skyscraperImage}
+			layout="full-width"
+			formats={['avif', 'webp']}
+			alt=""
+        />
       </div>
     </div>
   </section>

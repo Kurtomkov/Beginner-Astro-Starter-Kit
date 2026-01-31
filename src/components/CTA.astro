@@ -1,3 +1,7 @@
+---
+import { Picture } from "astro:assets";
+import cabinets2Image from "../assets/images/cabinets2.jpg";
+---
 <!-- ============================================ --><!--             Final Call to Action             --><!-- ============================================ -->
 <section id="cta">
   <div class="container">
@@ -12,22 +16,12 @@
     </p>
     <a href="/contact" class="cs-button-solid">Get an Estimate Now</a>
   </div>
-  <picture>
-    <source
-      media="(max-width: 600px)"
-      srcset="/assets/images/cabinets2-m.jpg"
-    />
-    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg" />
-    <img
-      aria-hidden="true"
-      decoding="async"
-      src="/assets/images/cabinets2.jpg"
-      alt="kitchen cabinets"
-      loading="lazy"
-      width="2500"
-      height="1667"
-    />
-  </picture>
+  <Picture
+    src={cabinets2Image}
+    layout="full-width"
+    formats={['avif', 'webp']}
+    alt=""
+  />
 </section>
 
 <style lang="less">
@@ -114,7 +108,7 @@
       content: "";
       width: (2000/16rem);
       height: (1108/16rem);
-      background: url("/assets/svgs/cta-squares.svg");
+      background: url("../assets/svgs/cta-squares.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
