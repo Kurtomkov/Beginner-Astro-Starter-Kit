@@ -16,7 +16,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
-const MARKER_FILE = path.join(ROOT_DIR, '.demo-removed');
 const DELETED_DIR = path.join(__dirname, 'deleted');
 
 // Files to move
@@ -30,7 +29,7 @@ const DEMO_PAGES = [
 const DEMO_COMPONENTS = [
   'src/components/CTA.astro',
   'src/components/Footer.astro',
-  'src/components/Landing.astro',
+  'src/components/Banner.astro',
 ];
 
 // Images to keep in src/assets/images (everything else gets moved)
@@ -472,19 +471,13 @@ async function main() {
   console.log('\n🧹 Beginner-Astro-LESS Demo Removal Script\n');
   console.log('This script will:');
   console.log('  - Move demo pages (about, contact, projects, reviews) to scripts/deleted/');
-  console.log('  - Move demo components (CTA, Footer, Landing) to scripts/deleted/');
-  console.log('  - Move demo images to scripts/deleted/');
+  console.log('  - Move demo components (CTA, Footer, Banner) to scripts/deleted/');
+  console.log('  - Move demo images from src/assets/images to scripts/deleted/');
+  console.log('  - Move demo SVGs from src/assets/svgs to scripts/deleted/');
   console.log('  - Update navData.json to Home only');
   console.log('  - Update BaseLayout.astro to remove Footer');
   console.log('  - Update index.astro to Hero section only');
   console.log('\nFiles can be recovered from scripts/deleted/ if needed.\n');
-
-  // Check if already run
-  if (fs.existsSync(MARKER_FILE)) {
-    console.log('⚠️  Demo content has already been removed.');
-    console.log('   Delete .demo-removed to run again.\n');
-    process.exit(0);
-  }
 
   // Ask for confirmation
   const confirmed = await askConfirmation('Proceed with demo removal? (y/n): ');
@@ -506,16 +499,14 @@ async function main() {
   console.log('\n--- Moving Demo Images from src/assets/images ---');
   moveDirectoryContents('src/assets/images', KEEP_SRC_IMAGES);
 
-  console.log('\n--- Moving Demo Images from public/assets/images ---');
-  moveDirectoryContents('public/assets/images', []);
+  console.log('\n--- Moving Demo SVGs from src/assets/svgs ---');
+  moveDirectoryContents('src/assets/svgs', ['logo-black.svg', 'moon.svg', 'sun.svg']);
 
   console.log('\n--- Updating Configuration Files ---');
   updateNavData();
   updateBaseLayout();
   updateIndexPage();
 
-  // Create marker file
-  fs.writeFileSync(MARKER_FILE, `Demo removed on ${new Date().toISOString()}\n`);
   console.log('\n✅ Demo removal complete!');
   console.log('\nRun "npm run build" to verify the build succeeds.\n');
 }
