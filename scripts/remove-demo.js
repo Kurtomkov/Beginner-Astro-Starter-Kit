@@ -74,7 +74,8 @@ function moveFile(relativePath) {
   }
 
   ensureDir(path.dirname(destPath));
-  fs.renameSync(srcPath, destPath);
+  fs.copyFileSync(srcPath, destPath);
+  fs.rmSync(srcPath);
   console.log(`  Moved: ${relativePath}`);
   return true;
 }
@@ -118,8 +119,8 @@ function moveDirectory(relativePath) {
     return false;
   }
 
-  ensureDir(path.dirname(destPath));
-  fs.renameSync(srcPath, destPath);
+  fs.cpSync(srcPath, destPath, { recursive: true });
+  fs.rmSync(srcPath, { recursive: true, force: true });
   console.log(`  Moved directory: ${relativePath}`);
   return true;
 }
