@@ -39,7 +39,7 @@
 ## Overview
 
 This beginner kit includes a pre-configured <a href="https://www.astro.build">Astro</a> environment, which
-allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v5.
+allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v6.
 
 An example website has also been provided, with easy substitution of website sections possible through the use of <a href="https://codestitch.app/">CodeStitch's
 vanilla component library</a>. This kit aims to get any project off the ground in as little time as possible, with deployment being possible in as little as two
@@ -151,7 +151,7 @@ Only the vanilla web technologies are _required_ before using this kit, with som
 
 ## Features
 
-- Runs on Astro v5
+- Runs on Astro v6
 - Leveraging components, props and scoped styles, as demonstrated in `/src/components/Banner.astro` for example
 - Leveraging Astro's built-in components such as `<Picture />`, as demonstrated in `/src/components/Banner.astro` for example
 - Automatically generates `sitemap-index.xml` and `sitemap-0.xml` thanks to the [Astro Sitemap integration](https://docs.astro.build/en/guides/integrations-guide/sitemap/)

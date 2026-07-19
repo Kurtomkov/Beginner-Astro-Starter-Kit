@@ -182,7 +182,7 @@ import landingImage from "../assets/images/landing.jpg"
         <h1 class="cs-title">Beginner Astro Starter Kit</h1>
         <p class="cs-text">
           This beginner kit includes a pre-configured Astro environment, which
-allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v5.
+allows for repeated components, centralized data and greater room to scale as your clients grow. The kit runs the latest major Astro version, v6.
         </p>
         <a href="/about" class="cs-button-solid">Explore More</a>
         <a href="/contact" class="cs-button-transparent">
