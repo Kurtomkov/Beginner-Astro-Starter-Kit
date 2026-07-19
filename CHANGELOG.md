@@ -1,5 +1,24 @@
 # Changelog
 
+## 5.0.0
+
+### Major changes
+- Astro has been upgraded to v7.1.1
+- Default HTML whitespace compression changed to JSX-style (`compressHTML: 'jsx'`), which strips newline-only whitespace between inline sibling elements
+
+### Updated
+- `astro` upgraded to v7.1.1, resolving a transitive `rollup` security advisory in the process
+- Fixed whitespace collapsing in `Footer.astro`'s credit line and contact list (address/phone), which lost spacing under the new JSX-style compression
+- Updated copy referencing the Astro version (hero text, README) from v6 to v7
+
+#### What should I do on my fork?
+- Upgrade Astro and its dependencies
+  - Run `npx @astrojs/upgrade` in your terminal, or manually update `astro` to `^7.1.1` in `package.json`
+  - At the yellow warning, choose "Yes" to continue
+- Visually inspect templates for missing spaces between inline elements (e.g. `<span>a</span><a>b</a>` on separate lines will no longer render with a space between them) and add explicit `{" "}` where needed, or set `compressHTML: true` in `astro.config.mjs` to restore the old behavior
+- Ensure that the other packages you may have added are up-to-date and compatible with Astro v7
+- Please refer to the [official Upgrade to v7 guide](https://docs.astro.build/en/guides/upgrade-to/v7/) if you run into any issues.
+
 ## 4.0.0
 
 ### Major changes
