@@ -1,5 +1,23 @@
 # Changelog
 
+## 4.0.0
+
+### Major changes
+- Astro has been upgraded to v6.4.8
+- Node.js `22.12.0` or higher is now required (Node 18 and 20 are no longer supported)
+
+### Updated
+- `@astrojs/sitemap` upgraded to v3.7.3
+- Updated copy referencing the Astro version (hero text, README) from v5 to v6
+
+#### What should I do on my fork?
+- Upgrade Astro and its dependencies
+  - Run `npx @astrojs/upgrade` in your terminal, or manually update `astro` to `^6.4.8` in `package.json`
+  - At the yellow warning, choose "Yes" to continue
+- Update your Node.js version to `22.12.0` or higher, including any `.nvmrc` or deployment config
+- Ensure that the other packages you may have added are up-to-date and compatible with Astro v6
+- Please refer to the [official Upgrade to v6 guide](https://docs.astro.build/en/guides/upgrade-to/v6/) if you run into any issues.
+
 ## 3.0.0
 
 ### Major changes
