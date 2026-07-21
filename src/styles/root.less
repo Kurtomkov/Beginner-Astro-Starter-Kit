@@ -8,13 +8,51 @@
 @media only screen and (min-width: 0em) {
   // Website colors
   :root {
-    --primary: #ffba19;
-    --primaryLight: #ffd675;
-    --secondary: #001f3f;
-    --secondaryLight: #001f3f;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
-    --bodyTextColorWhite: #fafbfc;
+    /* Core brand colours */
+    --primary: #424B32;
+    --primary-light: #667054;
+    --primary-dark: #293020;
+    --primaryLight: #667054;
+    --primaryDark: #293020;
+
+    /* Warm accent colours */
+    --secondary: #AE7E3E;
+    --secondary-light: #C69A58;
+    --secondary-dark: #805A2A;
+    --secondaryLight: #C69A58;
+    --secondaryDark: #805A2A;
+
+    /* Light backgrounds */
+    --cream: #F3EFE6;
+    --warm-white: #FAF8F2;
+    --parchment: #EDE7DC;
+    --stone: #D6CDBC;
+
+    /* Woodland neutrals */
+    --sage: #A8A58B;
+    --mushroom: #938468;
+    --taupe: #7E7153;
+
+    /* Text colours */
+    --heading-color: #303824;
+    --body-text-color: #34352E;
+    --muted-text-color: #656358;
+    --text-on-dark: #F6F1E7;
+
+    /* Dark section colours */
+    --forest: #353B25;
+    --deep-forest: #202619;
+    --near-black: #1B180C;
+
+    /* Lines and borders */
+    --border-light: #DED6C6;
+    --border-dark: rgba(66, 75, 50, 0.22);
+    --gold-border: rgba(174, 126, 62, 0.55);
+
+    /* Compatibility aliases for existing component styles */
+    --headerColor: var(--heading-color);
+    --bodyTextColor: var(--body-text-color);
+    --bodyTextColorWhite: var(--text-on-dark);
 
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -67,7 +105,7 @@
     padding: 0 (30/16rem);
 
     // Transition Properties
-    color: #000;
+    color: #faf9f9;
     background-color: var(--primary);
     display: inline-block;
     position: relative;
