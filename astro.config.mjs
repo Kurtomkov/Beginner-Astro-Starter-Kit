@@ -1,10 +1,17 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
-  site: "https://www.yourwebsite.com", // update me!
+  // update me!
+  site: "https://www.yourwebsite.com",
+
   integrations: [sitemap()],
+
   images: {
     layout: "constrained",
   },
+
+  adapter: cloudflare(),
 });

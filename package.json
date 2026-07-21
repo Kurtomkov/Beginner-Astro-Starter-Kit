@@ -6,14 +6,20 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "remove-demo": "node scripts/remove-demo.js",
-    "remove-dark-mode": "node scripts/remove-dark-mode.js"
+    "remove-dark-mode": "node scripts/remove-dark-mode.js",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.1.4",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.1",
     "less": "^4.5.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.112.0"
   }
 }
